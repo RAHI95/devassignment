@@ -1,43 +1,38 @@
 <template>
   <div>
-    <div class="d-grid gap-2">
-      <button
-        type="button"
-        class="btn btn-success mt-3"
-        style="height: auto"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapse-b1"
-        aria-expanded="false"
-        aria-controls="collapse-b1"
-      >
+     <div>
+      <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         User
       </button>
-    </div>
-
-    <div class="d-grid gap-2">
-      <button
-        type="button"
-        class="btn btn-primary mt-1"
-        style="height: auto"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapse-b2"
-        aria-expanded="false"
-        aria-controls="collapse-b2"
-      >
+    </h2>
+    
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
         View
       </button>
+    </h2>
+    
+  </div>
+  <div>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>User Content</strong>
+         <p>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the though the transition does limit overflow.</p> 
+      </div>
     </div>
-
-    <div id="myGroup">
-      <!-- Add the parent id here -->
-
-      <div class="collapse" id="collapse-b1" data-bs-parent="#myGroup">
-        <div class="alert alert-success mt-3">User Content</div>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>View Content</strong> 
+        <p>It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the though the transition does limit overflow.</p> 
       </div>
-
-      <div class="collapse" id="collapse-b2" data-bs-parent="#myGroup">
-        <div class="alert alert-primary mt-3">View Content</div>
-      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </template>
