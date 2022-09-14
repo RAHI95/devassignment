@@ -20,7 +20,25 @@
               </button>
             </h2>
           </div>
-          <div v-else class="accordion-item">
+          <div class="accordion-item below"  v-else>
+            <h2 class="accordion-header" id="headingOne">
+              <button class="d-flex bg-white mx-auto">
+                <a @click.prevent="onShowButton()">User</a>
+                <a
+                  href="#"
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                ></a>
+              </button>
+            </h2>
+          </div>
+        </transition>
+        <!-- <transition name="button" mode="out-in"> -->
+          <div class="accordion-item"  v-if="!showOnButton">
             <h2 class="accordion-header" id="headingTwo">
               <button class="d-flex bg-white mx-auto">
                 <a 
@@ -37,7 +55,8 @@
               </button>
             </h2>
           </div>
-        </transition>
+        <!-- </transition> -->
+        
         <div>
           <div
             id="collapseOne"
@@ -102,29 +121,20 @@ export default {
     onShowButton() {
             this.showOnButton = !this.showOnButton;
         },
-    shouldSlide() {
-      this.isSlide = true;
-      this.show = false;
-      setTimeout(() => {
-        this.show = true;
-      }, 0);
-    },
-    shouldFade() {
-      this.isSlide = false;
-      this.show = false;
-      setTimeout(() => {
-        this.show = true;
-      }, 0);
-    },
+   
   },
 };
 </script>
 
 <style>
+  .below{
+    position: relative;
+    top:4rem
+  }
  .button-enter-from,
 button-leave-to {
     /* opacity: 0; */
-    transform: translateY(30px);
+    transform: translateY(60px);
 }
 .button-enter-to,
 .button-leave-from {
